@@ -1,67 +1,122 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Te amo 5 chingamadrales y  1 pilón 🦜</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Te amo 5 chingamadrales y 1 pilón 🦜</title>
   <style>
-    body {
+    * {
       margin: 0;
-      background-color: #fff;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #fff0f0;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      height: 100vh;
-      font-family: Arial, sans-serif;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 20px;
+      font-family: 'Segoe UI', sans-serif;
     }
 
     h1 {
       color: red;
-      font-size: 5rem;
-      margin: 0 0 20px 0;
-      user-select: none;
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 30px;
     }
 
     .heart {
       position: relative;
       width: 300px;
       height: 270px;
-      background: red;
-      clip-path: 
-        polygon(
-          50% 0%,
-          93% 35%,
-          100% 75%,
-          50% 100%,
-          0% 75%,
-          7% 35%
-        );
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-      box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+      background-color: red;
+      transform: rotate(-45deg);
+      margin-top: 20px;
     }
 
-    .heart img {
+    .heart::before,
+    .heart::after {
+      content: "";
       position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 120%;
-      height: 120%;
+      width: 300px;
+      height: 270px;
+      background-color: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -150px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: 150px;
+      top: 0;
+    }
+
+    .image-inside {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform: rotate(45deg);
+      border-radius: 0 0 0 0;
+      overflow: hidden;
+      clip-path: url(#heartClip);
+    }
+
+    .image-inside img {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
-      transform: translate(-50%, -50%);
-      clip-path: inherit;
-      border-radius: inherit;
+      display: block;
+    }
+
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .heart, .heart::before, .heart::after {
+        width: 220px;
+        height: 200px;
+      }
+
+      .heart::before {
+        top: -110px;
+      }
+
+      .heart::after {
+        left: 110px;
+      }
     }
   </style>
 </head>
 <body>
+
   <h1>TE AMO</h1>
+
   <div class="heart">
-    <img src="foto.jpg" alt="Foto dentro del corazón" />
+    <div class="image-inside">
+      <img src="foto.jpg" alt="Foto de amor">
+    </div>
   </div>
+
+  <!-- Clip path para recortar imagen al corazón -->
+  <svg width="0" height="0">
+    <clipPath id="heartClip" clipPathUnits="objectBoundingBox">
+      <path d="M0.5,0.9 
+               C0.1,0.6,0,0.35,0.2,0.2 
+               C0.35,0.05,0.5,0.2,0.5,0.2 
+               C0.5,0.2,0.65,0.05,0.8,0.2 
+               C1,0.35,0.9,0.6,0.5,0.9Z"/>
+    </clipPath>
+  </svg>
+
 </body>
 </html>
