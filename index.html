@@ -2,10 +2,10 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Te Amo ❤️</title>
   <style>
-    *, *::before, *::after {
+    * {
       box-sizing: border-box;
     }
 
@@ -17,61 +17,43 @@
       justify-content: center;
       min-height: 100vh;
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       text-align: center;
-      padding: 15px 10px;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+      padding: 20px;
     }
 
     h1 {
       color: crimson;
-      font-size: clamp(3rem, 8vw, 4.5rem);
-      margin-bottom: 1.5rem;
-      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
-      font-weight: 700;
-      line-height: 1.1;
-      user-select: none;
+      font-size: 4.5em; /* Más grande */
+      margin-bottom: 40px;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
+      font-weight: bold;
     }
 
     .heart-photo {
-      width: clamp(280px, 70vw, 400px);
-      aspect-ratio: 1 / 1;
+      width: 400px;  /* Más grande */
+      height: 400px; /* Más grande */
       clip-path: path("M150 270 L30 150 A60 60 0 1 1 150 90 A60 60 0 1 1 270 150 Z");
       -webkit-clip-path: path("M150 270 L30 150 A60 60 0 1 1 150 90 A60 60 0 1 1 270 150 Z");
       overflow: hidden;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
-      border-radius: 15px;
-      transition: transform 0.3s ease;
-      will-change: transform;
-    }
-
-    .heart-photo:hover,
-    .heart-photo:focus {
-      transform: scale(1.05);
-      box-shadow: 0 0 30px rgba(220, 20, 60, 0.5);
-      cursor: pointer;
+      box-shadow: 0 0 25px rgba(0,0,0,0.35);
     }
 
     .heart-photo img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
-      user-select: none;
-      pointer-events: none;
     }
 
-    @media (max-width: 320px) {
-      body {
-        padding: 10px 5px;
-      }
+    @media (max-width: 480px) {
       h1 {
-        font-size: 2.8rem;
-        margin-bottom: 1rem;
+        font-size: 3.2em; /* Más grande que antes */
+        margin-bottom: 25px;
       }
+
       .heart-photo {
-        width: 240px;
+        width: 300px; /* Más grande que antes */
+        height: 300px;
       }
     }
   </style>
@@ -80,8 +62,8 @@
 
   <h1>TE AMO ❤️</h1>
 
-  <div class="heart-photo" tabindex="0" aria-label="Foto en forma de corazón">
-    <img src="foto.jpg" alt="Foto en corazón" loading="lazy" decoding="async" />
+  <div class="heart-photo">
+    <img src="foto.jpg" alt="Foto en corazón">
   </div>
 
 </body>
