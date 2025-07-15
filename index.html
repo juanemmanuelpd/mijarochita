@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Te amo 5 chingamadrales y 1 pilón 🦜</title>
   <style>
+    /* Reset y estilo base */
     body {
       margin: 0;
-      background: #fff0f0;
+      background-color: #fff0f0;
       font-family: 'Arial Black', Arial, sans-serif;
       display: flex;
       flex-direction: column;
@@ -15,90 +16,63 @@
       justify-content: center;
       min-height: 100vh;
       padding: 20px;
-      box-sizing: border-box;
     }
 
+    /* Texto TE AMO grande y rojo */
     h1 {
       color: #d61a3c;
       font-size: 8vw;
-      margin-bottom: 30px;
+      margin: 0 0 20px 0;
+      user-select: none;
       text-shadow: 2px 2px 5px #800000;
       text-align: center;
+    }
+
+    /* Contenedor del corazón */
+    .heart-container {
+      position: relative;
+      width: 50vw;
+      height: 50vw;
+      max-height: 90vh;
+      max-width: 400px;
+      min-width: 250px;
+      clip-path: path('M24 4C17 -1 8 3 8 11c0 7 16 21 16 21s16-14 16-21c0-8-9-12-16-7z');
+      background-color: #d61a3c;
+      filter: drop-shadow(0 0 15px #800000);
+      overflow: hidden;
       user-select: none;
     }
 
-    .heart {
-      position: relative;
-      width: 50vw;
-      max-width: 400px;
-      aspect-ratio: 1 / 1;
-      background-image: url('foto.jpg');
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
-      filter: drop-shadow(0 0 10px #800000);
-      cursor: default;
-    }
-
-    /* Forma de corazón con CSS */
-    .heart::before,
-    .heart::after {
-      content: "";
+    /* Imagen centrada y rellena */
+    .heart-container img {
       position: absolute;
-      width: 50%;
-      height: 80%;
-      background: #d61a3c;
-      border-radius: 50% 50% 0 0;
-      top: 0;
-      left: 25%;
-      box-shadow: 0 0 15px #800000;
-      z-index: -1;
-    }
-
-    .heart::before {
-      left: 0;
-      transform: rotate(-45deg);
-      transform-origin: 100% 100%;
-    }
-
-    .heart::after {
+      top: 50%;
       left: 50%;
-      transform: rotate(45deg);
-      transform-origin: 0 100%;
-    }
-
-    /* Para que el fondo (imagen) también tome la forma del corazón */
-    .heart {
-      clip-path: polygon(
-        50% 0%, 
-        85% 15%, 
-        100% 40%, 
-        100% 70%, 
-        75% 100%, 
-        50% 85%, 
-        25% 100%, 
-        0% 70%, 
-        0% 40%, 
-        15% 15%
-      );
+      width: 110%;  /* un poco más grande para rellenar bien */
+      height: 110%;
+      object-fit: cover;
+      object-position: center;
+      transform: translate(-50%, -50%);
+      pointer-events: none; /* para que no interfiera */
     }
 
     /* Responsive */
     @media (max-width: 600px) {
       h1 {
         font-size: 12vw;
-        margin-bottom: 20px;
       }
-      .heart {
+      .heart-container {
         width: 80vw;
+        height: 80vw;
         max-width: none;
       }
     }
-
   </style>
 </head>
 <body>
   <h1>TE AMO</h1>
-  <div class="heart"></div>
+  <div class="heart-container">
+    <img src="foto.jpg" alt="Foto dentro del corazón" />
+  </div>
 </body>
 </html>
