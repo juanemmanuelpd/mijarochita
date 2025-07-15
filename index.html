@@ -3,27 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Te amo 5 chingamadrales y 1 pilón 🦜</title>
+  <title>Te amo 5 chingamadrales y  1 pilón 🦜</title>
   <style>
     body {
-      background-color: #3b0000; /* color parecido al que mostraste */
+      margin: 0;
+      background-color: #fff;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
-      margin: 0;
+      height: 100vh;
       font-family: Arial, sans-serif;
     }
 
     h1 {
-      color: #d8364a; /* rojo fuerte similar al de la imagen */
-      font-size: 6rem;
-      margin: 0 0 40px 0;
+      color: red;
+      font-size: 5rem;
+      margin: 0 0 20px 0;
       user-select: none;
-      text-transform: uppercase;
-      font-weight: bold;
-      letter-spacing: 0.2em;
     }
 
     .heart {
@@ -31,46 +28,40 @@
       width: 300px;
       height: 270px;
       background: red;
-      clip-path: polygon(
-        50% 0%, 85% 20%, 100% 55%, 75% 90%, 
-        50% 100%, 25% 90%, 0% 55%, 15% 20%
-      );
+      clip-path: 
+        polygon(
+          50% 0%,
+          93% 35%,
+          100% 75%,
+          50% 100%,
+          0% 75%,
+          7% 35%
+        );
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
     }
 
     .heart img {
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 130%;  /* Ajusta para que rellene bien */
-      height: 130%;
+      width: 120%;
+      height: 120%;
       object-fit: cover;
       transform: translate(-50%, -50%);
       clip-path: inherit;
-    }
-
-    /* Responsive */
-    @media (max-width: 400px) {
-      h1 {
-        font-size: 4rem;
-        letter-spacing: 0.1em;
-      }
-
-      .heart {
-        width: 200px;
-        height: 180px;
-      }
+      border-radius: inherit;
     }
   </style>
 </head>
 <body>
   <h1>TE AMO</h1>
   <div class="heart">
-    <img src="foto.png" alt="Imagen en corazón" />
+    <img src="foto.jpg" alt="Foto dentro del corazón" />
   </div>
 </body>
 </html>
