@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Te Amo ❤️</title>
   <style>
     * {
@@ -10,66 +10,80 @@
     }
 
     body {
-      background-color: #ffe6ec;
+      background-color: #4B001F; /* color burdeos oscuro como en la imagen */
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: start;
       min-height: 100vh;
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       text-align: center;
-      padding: 20px;
+      padding: 40px 20px 20px;
+      color: #dc475d;
     }
 
     h1 {
-      color: crimson;
-      font-size: 4.5em;
+      font-weight: 900;
+      font-size: clamp(3rem, 6vw, 5rem);
       margin-bottom: 40px;
-      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
-      font-weight: bold;
-    }
-
-    .heart-photo {
-      width: 400px;
-      height: 400px;
-      clip-path: path("M150 270 L30 150 A60 60 0 1 1 150 90 A60 60 0 1 1 270 150 Z");
-      -webkit-clip-path: path("M150 270 L30 150 A60 60 0 1 1 150 90 A60 60 0 1 1 270 150 Z");
-      overflow: hidden;
-      box-shadow: 0 0 25px rgba(0,0,0,0.35);
-      background-color: #fff; /* para que se note el contorno si imagen no ocupa todo */
+      text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
       display: flex;
       align-items: center;
       justify-content: center;
+      gap: 15px;
+    }
+
+    h1 span.heart-emoji {
+      font-size: clamp(3.5rem, 7vw, 5rem);
+      filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.3));
+      user-select: none;
+    }
+
+    .heart-photo {
+      width: clamp(320px, 60vw, 450px);
+      aspect-ratio: 1 / 1;
+      clip-path: path("M150 270 L30 150 A60 60 0 1 1 150 90 A60 60 0 1 1 270 150 Z");
+      -webkit-clip-path: path("M150 270 L30 150 A60 60 0 1 1 150 90 A60 60 0 1 1 270 150 Z");
+      overflow: hidden;
+      box-shadow: 0 0 25px rgba(220, 71, 93, 0.7);
+      background-color: #40001a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
     }
 
     .heart-photo img {
       width: 100%;
       height: 100%;
-      object-fit: contain; /* Cambiado a contain para que no recorte */
+      object-fit: contain;        /* La imagen se escala para caber completa */
+      object-position: center;    /* Centra la imagen dentro del corazón */
       user-select: none;
       pointer-events: none;
+      border-radius: 0;
     }
 
     @media (max-width: 480px) {
       h1 {
-        font-size: 3.2em;
+        font-size: 3rem;
         margin-bottom: 25px;
       }
-
+      h1 span.heart-emoji {
+        font-size: 3.5rem;
+      }
       .heart-photo {
-        width: 300px;
-        height: 300px;
+        width: 280px;
       }
     }
   </style>
 </head>
 <body>
 
-  <h1>TE AMO ❤️</h1>
+  <h1>TE AMO <span class="heart-emoji">❤️</span></h1>
 
   <div class="heart-photo">
-    <img src="foto.jpg" alt="Foto en corazón">
+    <img src="foto.jpg" alt="Foto en corazón" />
   </div>
 
 </body>
