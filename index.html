@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Te amo 5 chingamadrales y 1 pilón🦜 </title>
+  <title>Foto en Corazón 50%</title>
   <style>
     body {
       background-color: #ffe6e6;
@@ -18,56 +18,59 @@
 
     h1 {
       color: #d61a3c;
-      font-size: 4vw;
+      font-size: 4vw; /* tamaño relativo al viewport */
       margin-bottom: 2vh;
       text-shadow: 1px 1px 2px #800000;
     }
 
     .heart-container {
       position: relative;
-      width: 50vw;
-      height: 50vw;
-      max-height: 90vh;
-      filter: drop-shadow(0 0 15px #d61a3c);
-      clip-path: path('M24 4C17 -1 8 3 8 11c0 7 16 21 16 21s16-14 16-21c0-8-9-12-16-7z');
-      /* Usamos clip-path con path SVG para corazón */
-      background: none;
-      overflow: hidden;
+      width: 50vw;  /* 50% del ancho viewport */
+      height: calc(50vw * 0.9); /* altura proporcional para el corazón */
+      max-height: 90vh; /* que no crezca demasiado en alto */
+      filter: drop-shadow(0 0 10px #d61a3c);
     }
 
     .heart-container img {
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 100%;
-      height: 100%;
+      width: 90%;
+      height: 90%;
       object-fit: cover;
       object-position: center;
+      clip-path: polygon(
+        50% 15%, 80% 0%, 100% 30%, 100% 65%, 
+        75% 90%, 50% 100%, 25% 90%, 0% 65%, 
+        0% 30%, 20% 0%
+      );
       transform: translate(-50%, -50%);
-      /* Sin clip-path aquí, porque el contenedor ya lo tiene */
     }
 
-    /* Fondo para el corazón */
-    .heart-background {
+    .heart-shape {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       background: #d61a3c;
-      clip-path: path('M24 4C17 -1 8 3 8 11c0 7 16 21 16 21s16-14 16-21c0-8-9-12-16-7z');
+      clip-path: polygon(
+        50% 15%, 80% 0%, 100% 30%, 100% 65%, 
+        75% 90%, 50% 100%, 25% 90%, 0% 65%, 
+        0% 30%, 20% 0%
+      );
       z-index: -1;
       filter: drop-shadow(0 0 15px #800000);
     }
 
-    /* Responsivo */
+    /* Para pantallas pequeñas */
     @media (max-width: 600px) {
       h1 {
         font-size: 6vw;
       }
       .heart-container {
         width: 80vw;
-        height: 80vw;
+        height: calc(80vw * 0.9);
       }
     }
   </style>
@@ -75,8 +78,8 @@
 <body>
   <h1>Te Amo</h1>
   <div class="heart-container">
-    <img src="tu-foto.jpg" alt="Foto en Corazón Bonito" />
-    <div class="heart-background"></div>
+    <img src="tu-foto.jpg" alt="Foto en Corazón" />
+    <div class="heart-shape"></div>
   </div>
 </body>
 </html>
